@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>		
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/validation.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="login_body">
+				<div class="login">
+					<h3>Login Here!</h3>
+				</div>
+				<form name="validform" method="post" action="login.html">
+					<div class="label">
+						<label>Enter Your Userame</label>
+					</div>
+					<div class="input">
+						<input type="text" name="username" onblur="return EmptyField(this)">
+					</div>
+					<div class="label">
+						<label>Enter Password</label>
+					</div>
+					<div class="input">
+						<input type="password" name="pwd" onblur="return PwdValidation(this)">
+					</div>
+					<div class="label">
+						<label>Enter Email</label>
+					</div>
+					<div class="input">
+						<input type="text" name="email" onblur="return EmailValidation(this)">
+					</div>
+					<div class="label">
+						<label>Mobile</label>
+					</div>
+					<div class="input">
+						<input type="text" name="mob" onblur="return MobValidation(this)">
+					</div>
+					<div class="label">
+						<label>Gender</label>
+					</div>
+					<div class="gender">
+						<div class="gen"><input type="radio" name="gender" value="male"> Male </div>  
+						<div class="gen"><input type="radio" name="gender" value="female"> Female  </div>   
+					</div>
+					<div class="label">
+						<label>Address</label>
+					</div>
+					<div class="input">
+						<textarea name="address" onblur="return AddressValidation(this)"></textarea> 
+					</div>
+					<button type="submit" onclick="return ValidateForm()">Submit</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

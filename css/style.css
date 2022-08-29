@@ -1,0 +1,51 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100vh;
+}
+.container{
+	font-family: Arial, sans-serif;
+	align-items:center;
+	display: flex;	
+	flex-direction: column;
+}
+.login_body{
+	width: 20%;
+	border: 1px solid #ccc;
+	margin-top: 20px;
+	padding: 20px 30px;
+}
+.login{
+	padding: 10px 0px;
+	color: #013273;
+}
+.label, .gender{
+	font-size: 15px;
+	padding: 10px 0px;
+	color: #545254;
+}
+input[type=text], input[type=password], textarea{
+  	padding: 5px;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+	width: 100%;
+}
+.gender{
+	display: flex;
+}
+.gen{
+	padding-right: 25px;
+}
+button{
+	width: 100%;
+	padding: 10px;
+	border: 1px solid green;
+  	border-radius: 4px;
+	background-color: green;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 30px;
+}
