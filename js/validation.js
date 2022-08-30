@@ -1,20 +1,20 @@
-function EmptyField(username)
-{					
-	if(username.value=='')
+$(document).on("blur","#username",function(){
+	var username=$("#username").val();	
+	if((username.trim()).length==0)
 	{
 		alert("Please enter the username!");	
 		return false;				
 	}	
-}
-function EmailValidation(email)
-{
+});
+$(document).on("blur","#email",function(){
+	var mail=$("#email").val();
 	var emailformat= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(email.value=='')
+	if((mail.trim()).length==0)
 	{
 		alert("Please enter email address!");	
 		return false;				
 	}
-	if(email.value.match(emailformat))
+	if(mail.match(emailformat))
 	{
 		return true;
 	}
@@ -23,29 +23,29 @@ function EmailValidation(email)
 		alert("Entered email address is invalid!");
 		return false;
 	}
-}
-function PwdValidation(pwd)
-{
+});
+$(document).on("blur","#pwd",function(){
+	var password=$("#pwd").val();
 	var pwdformat= /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*-]).{8,}$/;
-	if(pwd.value=='')
+	if((password.trim()).length==0)
 	{
 		alert("Please enter password!");	
 		return false;				
 	}
-	if(pwd.value.match(pwdformat))
-	{
-		return true;
-	}
-	else
+	else if(!password.match(pwdformat))
 	{
 		alert("Entered password not strong. Please try another one!");
 		return false;
 	}
-}
-function MobValidation(mob)
-{
+	else
+	{
+		return true;
+	}
+});
+$(document).on("blur","#mobile",function(){
+	var mob=$("#mobile").val();
 	var phonenoformat= /^(\d){10}$/;
-	if(mob.value=='')
+	if((mob.trim()).length==0)
 	{
 		alert("Please enter mobile number!");	
 		return false;				
@@ -59,16 +59,16 @@ function MobValidation(mob)
 		alert("Invalid mobile number!");
 		return false;
 	}
-} 
-function AddressValidation(addr)
-{
+});
+$(document).on("blur","#addr",function(){
+	var address=$("#addr").val();
 	var addressformat= /^[a-zA-Z0-9,.'-]{5,}$/; 
-	if(addr.value=='')
+	if((address.trim()).length==0)
 	{
 		alert("Please enter address!");	
 		return false;				
 	}
-	if(addr.value.match(addressformat))
+	if(address.match(addressformat))
 	{
 		return true;
 	}
@@ -77,16 +77,18 @@ function AddressValidation(addr)
 		alert("Invalid address!");
 		return false;
 	}
-}
-function ValidateForm()
-{
-	var username=document.validform.username.value;
-	var password=document.validform.pwd.value;	
-	var email=document.validform.email.value;		
-	var mobile=document.validform.mob.value;						
-	if(username=="" || password=="" || email=="" ||mob=="")
+});
+$(document).on("click","#submit",function(){
+	var username=$("#username").val();
+	var password=$("#pwd").val();	
+	var mail=$("#email").val();		
+	var mob=$("#mobile").val();						
+	if((username.trim()).length==0 || (password.trim()).length==0 || (email.trim()).length==0||(mob.trim()).length==0)
 	{
 		alert("Empty field not allowed!");
 		return false;
 	}
-}
+	else{
+		return true;
+	}
+});
